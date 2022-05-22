@@ -33,13 +33,6 @@
 
   </div>
 
-  
-
-
-
-
-  
-
   <div id="users">
 
     <div v-for="(item, index) in items" v-bind:key = "index">
@@ -47,6 +40,10 @@
       {{ index }}
       
     </div>
+
+    
+
+
 
 
 
@@ -71,9 +68,14 @@
 //import userdata from '@/main.js'
 
 
+
+
 export default {
   name: 'HomeView',
-  components: {}
+  components: {
+    
+  }
+
   /* ,
    
   data() {
@@ -86,6 +88,10 @@ export default {
   
 }
 </script>
+
+ref.put(file).then((snapshot) => {
+  console.log('Uploaded a blob or file!');
+});
 
 <style>
 
@@ -131,8 +137,13 @@ span {
 
 }
 
+
 .hero-text a {
   font-size: 23px;
+}
+
+.hero-img img{
+  width: 100%;
 }
 
 .hero-buttons {

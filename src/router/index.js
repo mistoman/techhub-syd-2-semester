@@ -1,93 +1,58 @@
-import {
-  createRouter,
-  createWebHistory
-} from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import { createRouter, createWebHistory } from 'vue-router'
+import Home from '../views/HomeView.vue'
 
-//firebase stuff
+import HomeSecView from '../views/HomeSecView.vue'
 
+// for editing (CRUD)
+import Edit from '../views/EditView.vue'
 
-/*eslint-disable no-unused-vars*/
-import { firebase } from '@firebase/app'
+// For login stuff
+import Login from '../views/LoginView.vue'
+import Register from '../views/RegisterView.vue'
 
-import { initializeApp } from "firebase/app";
+// route guarding
+//import firebase from 'firebase'
+//import 'firebase/firestore'
 
-import {
-  getDatabase,
-  onValue,
-  ref,
-  set
-} from "firebase/database";
-
-
-
-
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyBqDbLa5D4wWhy29M9-bIr9fhMeyqoYAHA",
-  authDomain: "techhub-syd-6dff8.firebaseapp.com",
-  databaseURL: "https://techhub-syd-6dff8-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "techhub-syd-6dff8",
-  storageBucket: "techhub-syd-6dff8.appspot.com",
-  messagingSenderId: "64600200329",
-  appId: "1:64600200329:web:a3d2cdd6ff678832432258"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-
-const db = getDatabase();
-
-
-
-
-
-
-function writeUserData(userId, name, email, imageUrl) {
-  const db = getDatabase();
-  
-  const reference = ref(db, 'users/' + userId);
-
-
-  set(reference, {
-    username: name,
-    email: email,
-    profile_picture: imageUrl
-
-  });
-
-}
-
-writeUserData("ands", "awe", "myemail", "myimg");
-
-
-
-
-
-
-
-
-
-
-
-const routes = [{
+const routes = [
+  {
     path: '/',
-    name: 'home',
-    component: HomeView
+    name: 'HomeView',
+    component: Home
   },
   {
-    path: '/about',
-    name: 'about',
+    path: '/HomeSecView',
+    name: 'HomeSecView',
+    component: HomeSecView
+  },
+  {
+    path: '/edit/:id',  // id parameter to know which project we clicked
+    name: 'EditView',
+    component: Edit
+  },
+  {
+    path: '/login',
+    name: 'LoginView',
+    component: Login
+  },
+  {
+    path: '/register',
+    name: 'RegisterView', 
+    component: Register
+  },
+  {
+    path: '/admin',
+    name: 'AdminView',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import( /* webpackChunkName: "about" */ '../views/AboutView.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/AdminView.vue')
   }
 ]
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
+  
 })
-
 export default router
