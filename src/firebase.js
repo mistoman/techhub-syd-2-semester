@@ -124,43 +124,44 @@ export const useLoadProjects = () => {
 let singleImageRefrence;
 
 function getImageUrl(path) {
-  console.log(path);
-  
 
-  storage.refFromURL('gs://' + storageRef.bucket + '/' + path).getDownloadURL().then(url => {
-
-    
-    console.log(url)
-    const image = document.createElement('img');
-    image.src = url;
-    //console.log(image);
+  return storage.refFromURL('gs://' + storageRef.bucket + '/' + path).getDownloadURL().then((url) => {
     singleImageRefrence = url;
-    return image
-    
-    
-    
 
-        
-      
+    console.log(url)
+    console.log(typeof url);
+    return url;
+
       })
-      console.log(singleImageRefrence);
-      return singleImageRefrence
+      
+      
 
 }
 
+(async () => {  
+  const result = await getImageUrl('projects/test.png')
+  console.log(Object.entries(result))  
+})()
+
+
 export const useLoadEvents = () => {
+
   const events = ref([])
   const close = eventCollection.onSnapshot(snapshot => {
 
-    console.log(snapshot.docs);
+    //console.log(snapshot.data());
 
-
-
-    events.value = snapshot.docs.map(doc => ({
+    events.value = snapshot.docs.map(doc => (
+      getImageUrl(doc.data().imgagefordb),
+      {
       id: doc.id,
-      imagePath: getImageUrl(doc.data().imgagefordb),
-      ...doc.data()
+
+      imagePath: singleImageRefrence,
+
+      ...doc.data(),
+
     }))
+
     console.log(events.value)
   })
   // Creating this listener, will return us a clean-up function(onUnmounted, 

@@ -2,15 +2,15 @@
    <nav class="nav" id="home">
        <div class="left-side">
 
-           <a href="#home">LOGO</a>
+           <a href="/">LOGO</a>
 
        </div>
        <div class="right-side">
 
-            <a href="">EVENTS</a> 
-            <a href="">STARTUPS</a> 
+            <a href="/homeview">EVENTS</a> 
+            <a href="/CommunityView">STARTUPS</a> 
             <a href="">ABOUT US</a> 
-            <a href="">CONTACT</a>
+            <a href="/ContactView">CONTACT</a>
             <a class="button-nav" href="">Become a Memeber</a>
 
        </div>
@@ -30,6 +30,8 @@ export default {
 .nav {
     display: flex;
     justify-content: space-between;
+    max-width: 1900px;
+    margin: 0 auto;
     
     
     

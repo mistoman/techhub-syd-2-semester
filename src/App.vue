@@ -1,13 +1,19 @@
 <template>
   <div>
-  <div id="nav">
-    <router-link to="/homesecview">Home</router-link> |
-    <router-link to="/admin">Admin</router-link>
-  </div>
+    <div id="nav">
+      <router-link to="/homesecview">Home</router-link> |
+      <router-link to="/admin">Admin</router-link> |
+      <router-link to="/ContactView">Contact</router-link>
+
+      
+    </div>
 
     <NavigationComponent />
-    <ProjectListUsers />
+
     <router-view/>
+
+    <FooterComponent/>
+
 
   </div>
 
@@ -20,7 +26,9 @@
 
 
 import NavigationComponent from '@/components/NavigationComponent.vue'
-import ProjectListUsers from '@/components/ProjectListUsers.vue'
+import FooterComponent from '@/components/FooterComponent.vue'
+
+
 
 import firebase from 'firebase' // firebase general stuff
 import {} from '@/firebase.js' // all from firebase.js file
@@ -30,11 +38,12 @@ import { useRouter, useRoute } from 'vue-router' // able to use methods from vue
 
 
 
+
 export default {
   name: 'App',
   components : {
     NavigationComponent,
-    ProjectListUsers
+    FooterComponent
     
   },
 

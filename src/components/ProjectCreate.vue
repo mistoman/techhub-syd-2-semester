@@ -148,6 +148,7 @@ import {storageRefefrence} from '@/firebase.js' // all from firebase.js file
         event.initEvent("input", true, true);
         event.eventName = "input";
         document.querySelector('#imagename').dispatchEvent(event);
+        console.log('uploaded')
         
 
 
