@@ -20,15 +20,15 @@ const storageRef = storage.ref();
 
 //const imagesRef = storageRef.child('projects');
 
-const testRef = storageRef.child('projects/test.png');
+//const testRef = storageRef.child('projects/test.png');
 
-console.log(storageRef.bucket + '/' + testRef.fullPath);
+//console.log(storageRef.bucket + '/' + testRef.fullPath);
 
-storage.refFromURL('gs://' + storageRef.bucket + '/' + testRef.fullPath).getDownloadURL().then(url => {console.log(url)});
+//storage.refFromURL('gs://' + storageRef.bucket + '/' + testRef.fullPath).getDownloadURL().then(url => {console.log(url)});
 
 
 // Create a reference under which you want to list
-var listRef = storageRef.child('projects');
+//var listRef = storageRef.child('projects');
 
 /* function uploadimg(img) {
   ref.put(img).then((snapshot) => {
@@ -42,7 +42,7 @@ var listRef = storageRef.child('projects');
 
 
 
-// Find all the prefixes and items.
+/* // Find all the prefixes and items.
 listRef.listAll()
   .then((res) => {
     res.prefixes.forEach((folderRef) => {
@@ -57,7 +57,7 @@ listRef.listAll()
   }).catch((error) => {
     // Uh-oh, an error occurred!
     console.log(error);
-  });
+  }); */
 
 
 
@@ -118,6 +118,7 @@ export const deleteEvent = id => {
 // it updates whenever a change is detected
 
 export const useLoadProjects = () => {
+  
 
   const projects = ref([])
   const close = projectCollection.onSnapshot(snapshot => {
@@ -125,17 +126,19 @@ export const useLoadProjects = () => {
     //console.log(snapshot.data());
 
     projects.value = snapshot.docs.map(doc => (
-      getImageUrl(doc.data().imgagefordb),
+      
+      //getImageUrl(doc.data().imgagefordb),
       {
       id: doc.id,
 
-      imagePath: singleImageRefrence,
+      //imagePath: singleImageRefrence,
+      
 
       ...doc.data(),
 
     }))
 
-    console.log(projects.value)
+    //console.log(projects.value)
   })
   // Creating this listener, will return us a clean-up function(onUnmounted, 
   // which we will call on the onUnmounted lifecycle(test with onUpdate)
@@ -146,9 +149,12 @@ export const useLoadProjects = () => {
 
 
 export const useLoadProjectss = () => {
+  
   const projects = ref([])
   const close = projectCollection.onSnapshot(snapshot => {
+    
     projects.value = snapshot.docs.map(doc => ({
+      
       id: doc.id, 
       ...doc.data()
     }))
@@ -159,27 +165,27 @@ export const useLoadProjectss = () => {
   return projects
 }
 
-let singleImageRefrence;
+/* let singleImageRefrence;
 
 function getImageUrl(path) {
 
   return storage.refFromURL('gs://' + storageRef.bucket + '/' + path).getDownloadURL().then((url) => {
+    console.log('error')
     singleImageRefrence = url;
+    console.log('error')
 
-    console.log(url)
-    console.log(typeof url);
+    // console.log(url)
+    // console.log(typeof url);
     return url;
 
       })
       
-      
+} */
 
-}
-
-(async () => {  
+/* (async () => {  
   const result = await getImageUrl('projects/test.png')
   console.log(Object.entries(result))  
-})()
+})() */
 
 
 export const useLoadEvents = () => {
@@ -190,17 +196,17 @@ export const useLoadEvents = () => {
     //console.log(snapshot.data());
 
     events.value = snapshot.docs.map(doc => (
-      getImageUrl(doc.data().imgagefordb),
+      //getImageUrl(doc.data().imgagefordb),
       {
       id: doc.id,
 
-      imagePath: singleImageRefrence,
+      //imagePath: singleImageRefrence,
 
       ...doc.data(),
 
     }))
 
-    console.log(events.value)
+    //console.log(events.value)
   })
   // Creating this listener, will return us a clean-up function(onUnmounted, 
   // which we will call on the onUnmounted lifecycle(test with onUpdate)
@@ -208,7 +214,7 @@ export const useLoadEvents = () => {
   return events
 }
 
-export const useLoadNewEvents = () => {
+/* export const useLoadNewEvents = () => {
   console.log('NewEvents')
 
   // Create a reference under which you want to list
@@ -234,6 +240,6 @@ listRef.listAll()
   onUnmounted(close)
   return listRef.listAll()
   
-}
+} */
 
 export const storageRefefrence = storageRef;

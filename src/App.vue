@@ -53,14 +53,16 @@ export default {
 
     onBeforeMount(() => { // 
       firebase.auth().onAuthStateChanged((user) => {
+        
         if (!user && route.path.includes('/admin')) { // dont have a user - not logged in)
           router.replace('/login') // send them to this place
         }
-        else if (route.path == '/login' || route.path == '/register') { // if logged in on this page, send us to home
+        else if (user && (route.path == '/login' || route.path == '/register')) { // if logged in on this page, send us to home
           router.replace('/'); // test: go to frontpage, should redirect
         }
       })
     })
+  
   }
   
 }

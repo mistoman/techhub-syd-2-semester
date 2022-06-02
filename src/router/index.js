@@ -14,10 +14,6 @@ import Edit from '../views/EditView.vue'
 import Login from '../views/LoginView.vue'
 import Register from '../views/RegisterView.vue'
 
-// route guarding
-//import firebase from 'firebase'
-//import 'firebase/firestore'
-
 const routes = [
   {
     path: '/',

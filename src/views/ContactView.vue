@@ -165,4 +165,20 @@
         }
 
     }
+
+    @media screen and (max-width: 640px) {
+        
+        .contact-us-container {
+            flex-direction: column;
+            padding: 10px;
+            padding-top: 0;
+        }
+
+        div.mailchimp-signup-live {
+            margin-top: 20px;
+            width: initial;
+        }
+    }
+
+
 </style>

@@ -43,7 +43,7 @@
             </div>
             <div class="community-list-checkmark">
                 <img src="svgviewer-output.png" alt="">
-                <p>networking events</p>
+                <p>Networking events</p>
             </div>
             <div class="community-list-checkmark">
                 <img src="svgviewer-output.png" alt="">
@@ -71,7 +71,7 @@
             </div>
             <div class="community-list-checkmark">
                 <img src="svgviewer-output.png" alt="">
-                <p>meet with startups</p>
+                <p>Meet with startups</p>
             </div>
         </div>
 
@@ -342,6 +342,12 @@
 
         .community-hero {
             flex-direction: column;
+            padding: 0 10px;
+
+            .left-hero-image, .right-hero-image {
+                opacity: 0.4;
+
+            }
 
             .big-header-text {
             
@@ -352,6 +358,32 @@
 
         .community-list {
             flex-direction: column;
+            padding: 0 10px;
+
+            .community-header-text {
+                margin: 0;
+                margin-top: 20px;
+            }
+
+            .community-list-checkmark {
+                
+                p {
+                    line-height: 20px;
+                    margin-left: 10px;
+                }
+            }
+        }
+
+        .join-us-sec {
+            flex-direction: column;
+            padding-top: 50px;
+            padding: 10px;
+
+            .mailchimp-signup-live {
+                width: initial;
+                margin-top: 40px;
+                margin-bottom: 40px;
+            }
         }
 
 
