@@ -73,6 +73,10 @@ export default {
   src: url('@/assets/Integral-Cf-Heavy.otf');
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 
 
 h1,h2,h3,h4 {

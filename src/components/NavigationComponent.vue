@@ -3,31 +3,49 @@
        <div class="left-side">
          <a href="/">
          <img class="nav-logo" src="fulllogopurple.ths.svg" alt="">
+
          </a>
+         <div onclick="document.querySelector('.right-side').classList.toggle('show');" class="hamburger-menu">
+           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+         </div>
        </div>
        <div class="right-side">
 
-            <a href="/homeview">EVENTS</a> 
-            <a href="/CommunityView">STARTUPS</a> 
-            <a href="">ABOUT US</a> 
-            <a href="/ContactView">CONTACT</a>
-            <a href="">TECHHUB INVEST</a>
-            <a class="button-nav" href=""><span> Become a Memeber </span></a>
+            <router-link to="/UpcomingeventsView">EVENTS</router-link>
+            <router-link to="/CommunityView">STARTUPS</router-link> 
+            <router-link :to="{ path: '/', hash: '#about-us-nav'}">ABOUT US</router-link>
+            <router-link to="/ContactView">CONTACT</router-link>
+            <router-link to="">TECHHUB INVEST</router-link>
+            <router-link class="button-nav" :to="{ path: '/CommunityView', hash: '#comunnity-signup'}"><span> Become a Memeber </span></router-link>
 
        </div>
+
+       
+
+
      
     
 
   </nav>
+
+  
 </template>
 
 <script>
 export default {
   name: 'NavigationComponent',
 }
+
+
+
 </script>
 
 <style lang="scss">
+
+.hamburger-menu {
+  display: none;
+
+}
   
 
 .nav-logo {
@@ -41,6 +59,7 @@ export default {
     justify-content: space-between;
     max-width: 1900px;
     margin: 0 auto;
+    
     
     
     
@@ -78,6 +97,84 @@ export default {
 a {
     color: #121E49
 }
+
+@media screen and (max-width: 640px) {
+  body {
+    margin: 0;
+    margin-top: 96px;
+    
+  }
+  .nav {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    padding: 0;
+    pointer-events: none;
+    
+    
+    
+    
+
+    .left-side {
+      display: flex;
+      justify-content: space-between;
+      
+      align-items: center;
+      background: white;
+      padding: 20px;
+      position: relative;
+      pointer-events: all;
+
+      text-align: left;
+
+      .nav-logo {
+        filter: initial;
+        max-width: 60%;
+
+
+      }
+      
+
+      .hamburger-menu {
+        display: block;
+        fill: #6B38DB;
+        width: 35px;
+        
+      }
+    }
+
+    .right-side {
+      position: relative;
+      left: 100%;
+      transition: left .3s ease;
+      padding: 25px;
+      font-size: 18px;
+      
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      background: white;
+      border-bottom: 1px solid gainsboro;
+      
+      border-top: 1px solid gainsboro;
+      right: -200%;
+      pointer-events: all;
+      &.show {
+        left: 0;
+        right: 0;
+
+
+      }
+
+    }
+  }
+}
+
+
 
 
   

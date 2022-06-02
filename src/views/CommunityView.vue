@@ -3,8 +3,8 @@
         <img class="left-hero-image" src="Group 90.png" alt="">
         <img class="right-hero-image" src="Group 88.png" alt="">
         <p class="big-header-text">be part of the <br> <span class="main-text-color-purble"> community </span> </p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do <br> eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. </p>
+        <p>Become a full member of the number one technology community in 
+            Southern Denmark, with no obligations. Your future is built by the whole community.</p>
 
 
     </div>
@@ -14,21 +14,19 @@
         <div class="community-list-headline">
 
             <p class="community-header-text">for <span class="main-text-color-purble"> students </span></p>
+
             <div class="community-list-checkmark">
                 <img src="svgviewer-output.png" alt="">
-                <p>Inspirational talks</p>
+                <p>Mentorship opportunities 
+                    with leading experts</p>
             </div>
             <div class="community-list-checkmark">
                 <img src="svgviewer-output.png" alt="">
-                <p>Inspirational talks</p>
+                <p>Meet & collaborate with students </p>
             </div>
             <div class="community-list-checkmark">
                 <img src="svgviewer-output.png" alt="">
-                <p>Inspirational talks</p>
-            </div>
-            <div class="community-list-checkmark">
-                <img src="svgviewer-output.png" alt="">
-                <p>Inspirational talks</p>
+                <p>Educational content </p>
             </div>
             <div class="community-list-checkmark">
                 <img src="svgviewer-output.png" alt="">
@@ -38,35 +36,34 @@
 
         <div class="community-list-headline">
 
-            <p class="community-header-text">for <span class="main-text-color-purble"> students </span></p>
+            <p class="community-header-text">for <span class="main-text-color-purble"> startups </span></p>
             <div class="community-list-checkmark">
                 <img src="svgviewer-output.png" alt="">
-                <p>Inspirational talks</p>
+                <p>Private member community platform </p>
             </div>
             <div class="community-list-checkmark">
                 <img src="svgviewer-output.png" alt="">
-                <p>Inspirational talks</p>
+                <p>networking events</p>
             </div>
             <div class="community-list-checkmark">
                 <img src="svgviewer-output.png" alt="">
-                <p>Inspirational talks</p>
+                <p>Opportunities for exposure </p>
             </div>
             <div class="community-list-checkmark">
                 <img src="svgviewer-output.png" alt="">
-                <p>Inspirational talks</p>
+                <p>Introductions to top investors 
+                    + corporate partners</p>
             </div>
-            <div class="community-list-checkmark">
-                <img src="svgviewer-output.png" alt="">
-                <p>Inspirational talks</p>
-            </div>
+
         </div>
 
         <div class="community-list-headline">
 
-            <p class="community-header-text">for <span class="main-text-color-purble"> students </span></p>
+            <p class="community-header-text">for <span class="main-text-color-purble">investors </span></p>
             <div class="community-list-checkmark">
                 <img src="svgviewer-output.png" alt="">
-                <p>Inspirational talks</p>
+                <p>Curated Introductions 
+                    to targeted startups</p>
             </div>
             <div class="community-list-checkmark">
                 <img src="svgviewer-output.png" alt="">
@@ -74,15 +71,7 @@
             </div>
             <div class="community-list-checkmark">
                 <img src="svgviewer-output.png" alt="">
-                <p>Inspirational talks</p>
-            </div>
-            <div class="community-list-checkmark">
-                <img src="svgviewer-output.png" alt="">
-                <p>Inspirational talks</p>
-            </div>
-            <div class="community-list-checkmark">
-                <img src="svgviewer-output.png" alt="">
-                <p>Inspirational talks</p>
+                <p>meet with startups</p>
             </div>
         </div>
 
@@ -103,7 +92,7 @@
 
 
 
-        <div class="mailchimp-signup-live">
+        <div id="comunnity-signup" class="mailchimp-signup-live">
 
             <div id="mc_embed_signup">
                 <form
@@ -348,4 +337,26 @@
             }
         }
     }
+
+    @media screen and (max-width: 640px) {
+
+        .community-hero {
+            flex-direction: column;
+
+            .big-header-text {
+            
+                font-size: 44px;
+            
+            }
+        }
+
+        .community-list {
+            flex-direction: column;
+        }
+
+
+        
+    }
+
+
 </style>

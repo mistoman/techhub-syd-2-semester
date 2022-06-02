@@ -5,7 +5,7 @@
           <div class="event-item-info">
             <p>{{ date }}</p>
             <p>{{ location }}</p>
-            <p>{{ title }}</p>
+            <p class="event-title-header">{{ title }}</p>
             <p>{{ description }}</p>
             <a class="main-text-color-purble" v-bind:href="'event/' + id" >Read More</a>
           </div>
@@ -55,6 +55,21 @@ import { useLoadEvents } from '@/firebase.js'
     text-align: left;
     padding: 15px;
 
+    .event-title-header {
+      font-size: 23px;
+      padding: 0;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+  }
+
+  .active-members {
+
+    .active-members-top {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }
 
