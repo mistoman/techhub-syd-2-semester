@@ -87,9 +87,20 @@ export const getProject = async id => {
   // Link: https://firebase.google.com/docs/reference/js/firebase.database.DataSnapshot#exists
 }
 
+export const getEvent = async id => {
+  const project = await eventCollection.doc(id).get()
+  // ternary : condition ? ifTrue : ifFalse
+  return project.exists ? project.data() : null  // firebase exist method (like include/contains) 
+  // Link: https://firebase.google.com/docs/reference/js/firebase.database.DataSnapshot#exists
+}
+
 // accepts project + id (through the v-for) and updates the correct project based in id
 export const updateProject = (id, project) => {
   return projectCollection.doc(id).update(project)
+}
+
+export const updateevent = (id, event) => {
+  return eventCollection.doc(id).update(event)
 }
 
 // accepts id => deletes
@@ -106,8 +117,35 @@ export const deleteEvent = id => {
 // to do this we add a listener(onSnapshot) on projectCollections so 
 // it updates whenever a change is detected
 
-
 export const useLoadProjects = () => {
+
+  const projects = ref([])
+  const close = projectCollection.onSnapshot(snapshot => {
+
+    //console.log(snapshot.data());
+
+    projects.value = snapshot.docs.map(doc => (
+      getImageUrl(doc.data().imgagefordb),
+      {
+      id: doc.id,
+
+      imagePath: singleImageRefrence,
+
+      ...doc.data(),
+
+    }))
+
+    console.log(projects.value)
+  })
+  // Creating this listener, will return us a clean-up function(onUnmounted, 
+  // which we will call on the onUnmounted lifecycle(test with onUpdate)
+  onUnmounted(close)
+  return projects
+}
+
+
+
+export const useLoadProjectss = () => {
   const projects = ref([])
   const close = projectCollection.onSnapshot(snapshot => {
     projects.value = snapshot.docs.map(doc => ({

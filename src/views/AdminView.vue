@@ -7,7 +7,11 @@
     </button>
 
     <ProjectCreate />
+    <ProjectCreateTestimonials />
     <ProjectList />
+
+    <ProjectListTestimonials />
+
   </div>
 </template>
 
@@ -20,13 +24,18 @@ import { /*useRoute,*/ useRouter } from 'vue-router'
 
 import ProjectCreate from '@/components/ProjectCreate.vue'
 import ProjectList from '@/components/ProjectList.vue'
+import ProjectCreateTestimonials from '@/components/ProjectCreateTestimonials.vue'
+import ProjectListTestimonials from '@/components/ProjectListTestimonials.vue'
 
 export default {
   name: 'HomeSecView',
   components: {
  
     ProjectCreate,
-    ProjectList
+    ProjectCreateTestimonials,
+    ProjectList,
+    ProjectListTestimonials
+
 
   },
   setup() {

@@ -39,14 +39,14 @@
 
 <script>
 // useload hook + delete import 
-import { useLoadEvents, deleteProject, deleteEvent } from '@/firebase.js'
+import { useLoadEvents, deleteEvent } from '@/firebase.js'
 
 
   export default {
     setup() {
       const events = useLoadEvents()
 
-      return { events, deleteProject, deleteEvent }
+      return { events, deleteEvent }
     },
     methods: {
       

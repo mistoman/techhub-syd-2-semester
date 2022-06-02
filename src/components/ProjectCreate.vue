@@ -1,5 +1,5 @@
 <template>
-  <div class="card card-body mt-4">
+  <div class="card">
     <!-- using @submit as a click function - add prevent to stop from refreshing page -->
     <form @submit.prevent="onSubmit">    
       <div class="form-group">
@@ -12,8 +12,8 @@
         />
       </div>
 
-      <div class="form-group mt-3">
-        <label>IMG</label>
+      <div class="form-group">
+        <label>IMG Link for picture</label>
         <input id="imagename"
           type="text"
           class="form-control"
@@ -22,7 +22,7 @@
         />
       </div>
 
-      <div class="form-group mt-3">
+      <div class="form-group">
         <label>Description</label>
         <input 
           type="text"
@@ -32,7 +32,7 @@
         />
       </div>
 
-      <div class="form-group mt-3">
+      <div class="form-group">
         <label>Date</label>
         <input 
           type="text"
@@ -42,7 +42,7 @@
         />
       </div>
 
-      <div class="form-group mt-3">
+      <div class="form-group">
         <label>Location of Event</label>
         <input 
           type="text"
@@ -51,23 +51,18 @@
           required
         />
       </div>
+      <p class="info-text-upload">You can upload images to the firebase storage bucket, but it will not load Dynamically  you need to put the link in the &nbsp;<span>"IMG Link for picture"</span>&nbsp;input field to work </p>
 
-      <div class="">
-
+      <div class="form-group">
         <input id="image" ref="file"
         v-on:change="handleFileUpload()"  
         type="file">
-
-<!--         <input id="image" ref="file" 
-        v-on:change="handleFileUpload()"   
-        type="file"> -->
-
       </div>
 
       
-
-      <button type="submit" class="btn btn-success mt-3">
-        Create Project
+      <br>
+      <button type="submit" class="btn btn-success">
+        Add Event
       </button>
     </form>
   </div>
@@ -166,6 +161,51 @@ import {storageRefefrence} from '@/firebase.js' // all from firebase.js file
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
+  .info-text-upload {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      font-size: 20px;
+      width: 100%;
+
+      span {
+      text-decoration: underline;
+      color: red;
+    }
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    label {
+      font-size: 23px;
+    }
+
+
+
+    input {
+      margin-bottom: 20px;
+    }
+
+
+
+    
+  }
+
+  .btn {
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+}
 
 </style>

@@ -41,7 +41,7 @@ export default {
     const projectId = computed(() => route.params.id)
 
     const form = reactive({
-      name: '',
+      title: '',
       task: ''
     })
     // show information about the current(click) project in the edit form
@@ -49,7 +49,7 @@ export default {
     // pull the project from firebase and then assign the values to the fields
     onMounted(async () => {
       const project = await getProject(projectId.value)
-      form.name = project.name
+      form.title = project.title
       form.task = project.task
     })
 

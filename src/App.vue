@@ -53,7 +53,7 @@ export default {
 
     onBeforeMount(() => { // 
       firebase.auth().onAuthStateChanged((user) => {
-        if (!user) { // dont have a user - not logged in)
+        if (!user && route.path.includes('/admin')) { // dont have a user - not logged in)
           router.replace('/login') // send them to this place
         }
         else if (route.path == '/login' || route.path == '/register') { // if logged in on this page, send us to home
@@ -66,9 +66,42 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+
+@font-face {
+  font-family: Integral-Cf-Heavy;
+  src: url('@/assets/Integral-Cf-Heavy.otf');
+}
+
+
+
+h1,h2,h3,h4 {
+  font-family: Integral-Cf-Heavy;
+  color: #150F37;
+}
+
+.h-text-font {
+  font-family: Integral-Cf-Heavy;
+  color: #150F37;
+}
+
+p {
+  font-family: sofia-pro, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.p-text-bold {
+  font-family: sofia-pro, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: #150F37;
+}
+  
+
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: sofia-pro, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

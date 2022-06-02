@@ -7,11 +7,8 @@
             <p>{{ location }}</p>
             <p>{{ title }}</p>
             <p>{{ description }}</p>
-            <a class="main-text-color-purble" href="">Read More</a>
+            <a class="main-text-color-purble" v-bind:href="'event/' + id" >Read More</a>
           </div>
-
-          
-          
 
         </div>
 
@@ -37,7 +34,7 @@ import { useLoadEvents } from '@/firebase.js'
 
 .events-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .event-item {
@@ -47,7 +44,7 @@ import { useLoadEvents } from '@/firebase.js'
   align-items: flex-start;
   background: white;
   box-shadow: 0 0 40px lightgray;
-  width: calc(50% - 40px);
+  width: calc(50% - 80px);
   
   
   img {

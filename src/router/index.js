@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/HomeView.vue'
 import ContactView from '../views/ContactView.vue'
 import CommunityView from '../views/CommunityView.vue'
+import UpcomingeventsView from '../views/UpcomingeventsView.vue'
+import EventView from '../views/EventView.vue'
 
 import HomeSecView from '../views/HomeSecView.vue'
 
@@ -33,6 +35,11 @@ const routes = [
     component: CommunityView
   },
   {
+    path: '/UpcomingeventsView',
+    name: 'UpcomingeventsView',
+    component: UpcomingeventsView
+  },
+  {
     path: '/HomeSecView',
     name: 'HomeSecView',
     component: HomeSecView
@@ -41,6 +48,11 @@ const routes = [
     path: '/edit/:id',  // id parameter to know which project we clicked
     name: 'EditView',
     component: Edit
+  },
+  {
+    path: '/event/:id',  // id parameter to know which project we clicked
+    name: 'EventView',
+    component: EventView
   },
   {
     path: '/login',

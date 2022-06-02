@@ -1,9 +1,9 @@
 <template>
    <nav class="nav" id="home">
        <div class="left-side">
-
-           <a href="/">LOGO</a>
-
+         <a href="/">
+         <img class="nav-logo" src="fulllogopurple.ths.svg" alt="">
+         </a>
        </div>
        <div class="right-side">
 
@@ -11,7 +11,8 @@
             <a href="/CommunityView">STARTUPS</a> 
             <a href="">ABOUT US</a> 
             <a href="/ContactView">CONTACT</a>
-            <a class="button-nav" href="">Become a Memeber</a>
+            <a href="">TECHHUB INVEST</a>
+            <a class="button-nav" href=""><span> Become a Memeber </span></a>
 
        </div>
      
@@ -26,7 +27,15 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+  
+
+.nav-logo {
+
+  filter: brightness(0) invert(1);
+  
+  width: 100%;
+}
 .nav {
     display: flex;
     justify-content: space-between;
@@ -43,6 +52,7 @@ export default {
     display: flex;
     gap: 25px;
     padding-top: 20px;
+    align-items: center;
 
     
 }
@@ -51,12 +61,18 @@ export default {
   
   border-radius: 50px;
   background: #6B38DB;
-  padding: 0px 20px;
+  padding: 10px 20px;
   color: white;
   fill: white;
   font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-
+  span {
+    color: white;
+    line-height: 14px;
+  }
 }
 
 a {

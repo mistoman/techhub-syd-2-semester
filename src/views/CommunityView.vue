@@ -111,21 +111,36 @@
                     method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
                     target="_blank" novalidate>
                     <div id="mc_embed_signup_scroll">
-                        <p class="mailchimp-info-header">sign up and <span class="main-text-color-purble"> join the community </span></p>
+                        <p class="mailchimp-info-header h-text-font">sign up and <span class="main-text-color-purble"> join the community </span></p>
                         <p class="mailchimp-info-text">We will do our best to asnwer you in 2 business days. In the meantime <br> feel free to join our slack channel and facebook group</p>
                         <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
                         <div class="mc-field-group">
-                            <label for="mce-EMAIL">Email Address <span class="asterisk">*</span>
+                            <label for="mce-EMAIL"> 
                             </label>
-                            <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+                            <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email*"> 
                         </div>
                         <div class="mc-field-group">
-                            <label for="mce-FNAME">First Name </label>
-                            <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+                            <label for="mce-FNAME"> </label>
+                            <input type="text" value="" name="FNAME" class="" id="mce-FNAME" placeholder="FIRST NAME">
+                            
+                        </div>
+
+                        <div class="checkbox-mailchimp">
+                            <input id="student-checkbox" class="checkbox-mailchimp-input" type="checkbox">
+                            <label for="student-checkbox">Student</label>
+                        </div>
+
+                        <div class="checkbox-mailchimp"> 
+                            <input id="start-up-checkbox" class="checkbox-mailchimp-input" type="checkbox">
+                            <label for="start-up-checkbox">Start up</label>
                         </div>
                         <div id="mce-responses" class="clear foot">
                             <div class="response" id="mce-error-response" style="display:none"></div>
                             <div class="response" id="mce-success-response" style="display:none"></div>
+                        </div>
+
+                        <div class="tell-us-about-box">
+                            <textarea id="tell-us-about-box-in" type="text">Tell Some Words About Yourself…</textarea>
                         </div>
                         <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
                         <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
@@ -151,6 +166,9 @@
 </template>
 
 <style lang="scss">
+
+
+
     .community-hero {
         margin: 0 auto;
         text-align: center;
@@ -244,14 +262,90 @@
         background-color: white;
         box-shadow: 0 0 10px grey;
         width: 100%;
-        max-width: 500px;
+        max-width: 600px;
+        padding: 15px;
+
+        display: flex;
+
+        #mc_embed_signup_scroll {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            gap: 10px;
+        }
+        
 
         .mailchimp-info-header {
             font-size: 30px;
+            text-align: left;
+            padding: 0;
+            margin: 0;
         }
 
         .mailchimp-info-text {
             font-size: 18px;
+            text-align: left;
+        }
+
+        .checkbox-mailchimp {
+            display: flex;
+            align-content: center;
+            gap: 10px;
+
+            input {
+                margin: 0;
+                
+            }
+
+            label {
+                line-height: 10px;
+            }
+        }
+
+        .tell-us-about-box {
+
+            #tell-us-about-box-in {
+                width: 450px;
+                height: 200px;
+                resize: none;
+                background-color: #EFEFEF;
+                border-radius: 20px;
+                border: 0;
+                width: 350px;
+                height: 100px;
+                max-width: 600px;
+                padding: 15px;
+                outline: 0;
+
+                font-family: sofia-pro, sans-serif;
+                font-weight: 300;
+                font-style: normal;
+                font-size: 18px;
+
+                
+
+            }
+            
+        }
+
+        input[type=text],input[type=email] {
+
+            border-radius: 50px;
+            border: 0;
+            width: 300px;
+            height: 50px;
+            padding-left: 20px;
+            color: #000000;
+            background-color: #EFEFEF ;
+            outline: 0;
+        
+
+            &::placeholder {
+
+                color: #000000;
+                font-weight: bold;
+            }
         }
     }
 </style>
