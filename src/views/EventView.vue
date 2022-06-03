@@ -149,4 +149,31 @@ export default {
         }
     }
 
+    @media screen and (max-width: 640px) {
+
+        .events-container {
+            padding: 20px;
+
+            .event-item {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+
+                .event-desc {
+                    box-sizing: border-box;
+                    width: 100%;   
+                }
+
+                p {
+                    margin: 0;
+                }
+            }
+
+        } 
+            
+    }
+
+    
+
 </style>

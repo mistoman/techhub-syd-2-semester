@@ -36,6 +36,7 @@ import { useLoadEvents } from '@/firebase.js'
 .events-container {
   display: flex;
   justify-content: space-evenly;
+  margin-bottom: 20px;
 }
 
 .event-item {

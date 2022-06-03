@@ -46,7 +46,7 @@
                             <div id="mc_embed_signup_scroll">
                                 <p class="mailchimp-info-header h-text-font">send us a <span
                                         class="main-text-color-purble"> message </span></p>
-                                <p class="mailchimp-info-text">We will do our best to asnwer you in 2 business days. In
+                                <p class="mailchimp-info-text">We will do our best to answer you in 2 business days. In
                                     the meantime <br> feel free to join our slack channel and facebook group</p>
                                 <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
                                 <div class="mc-field-group">
@@ -172,6 +172,14 @@
             flex-direction: column;
             padding: 10px;
             padding-top: 0;
+            box-sizing: border-box;
+        }
+
+        .mailchimp-signup-live .tell-us-about-box textarea#tell-us-about-box-in {
+
+            width: 100%;
+            box-sizing: border-box;
+
         }
 
         div.mailchimp-signup-live {

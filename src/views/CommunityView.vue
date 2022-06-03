@@ -101,7 +101,7 @@
                     target="_blank" novalidate>
                     <div id="mc_embed_signup_scroll">
                         <p class="mailchimp-info-header h-text-font">sign up and <span class="main-text-color-purble"> join the community </span></p>
-                        <p class="mailchimp-info-text">We will do our best to asnwer you in 2 business days. In the meantime <br> feel free to join our slack channel and facebook group</p>
+                        <p class="mailchimp-info-text">We will do our best to answer you in 2 business days. In the meantime <br> feel free to join our slack channel and facebook group</p>
                         <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
                         <div class="mc-field-group">
                             <label for="mce-EMAIL"> 
@@ -345,7 +345,7 @@
             padding: 0 10px;
 
             .left-hero-image, .right-hero-image {
-                opacity: 0.4;
+                opacity: 0.25;
 
             }
 
@@ -383,6 +383,39 @@
                 width: initial;
                 margin-top: 40px;
                 margin-bottom: 40px;
+
+                input[type=text],input[type=email] {
+                    width: 100%;
+                    box-sizing: border-box;
+                }
+            }
+        }
+
+        .tell-us-about-box {
+            width: 100%;
+        }
+
+        #mc_embed_signup_scroll .mc-field-group {
+            width: 100%;
+
+            input {
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
+
+        .mailchimp-info-text {
+
+
+                .mailchimp-signup-live {
+                width: initial;
+                margin-top: 40px;
+                margin-bottom: 40px;
+
+                input[type=text],input[type=email] {
+                    width: 100%;
+                    box-sizing: border-box;
+                }
             }
         }
 

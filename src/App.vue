@@ -1,20 +1,8 @@
 <template>
   <div>
-    <div id="nav">
-      <router-link to="/homesecview">Home</router-link> |
-      <router-link to="/admin">Admin</router-link> |
-      <router-link to="/ContactView">Contact</router-link>
-
-      
-    </div>
-
     <NavigationComponent />
-
     <router-view/>
-
     <FooterComponent/>
-
-
   </div>
 
 

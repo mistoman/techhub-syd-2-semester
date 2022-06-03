@@ -1,11 +1,13 @@
 <template>
-  <div class="">
+  <div class="admin-list">
     <table class="">
       <thead>
         <tr>
-          <th scope="col">Name</th>
-          <th scope="col">Task</th>
-          <th scope="col">Action</th>
+          <th scope="col">Title</th>
+          <th scope="col">Image Path</th>
+          <th scope="col">Description</th>
+          <th scope="col">Date</th>
+          <th scope="col">Location</th>
         </tr>
       </thead>
       <tbody>

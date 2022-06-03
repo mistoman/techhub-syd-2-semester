@@ -3,8 +3,6 @@
 
         <ProjectListUsers />
 
-        d
-
     </div>
 
 

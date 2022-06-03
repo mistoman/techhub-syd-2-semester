@@ -61,9 +61,11 @@ import { useLoadProjects, deleteProject } from '@/firebase.js'
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
     .admin-list {
+
+        margin-top: 50px;
         
         table {
             border-collapse: collapse;
@@ -76,7 +78,7 @@ import { useLoadProjects, deleteProject } from '@/firebase.js'
 
                 td {
                     padding: 10px;
-                    
+
 
                 }
             }

@@ -340,7 +340,6 @@
 
 
 <style lang="scss">
-  video {}
 
 
 
