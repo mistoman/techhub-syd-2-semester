@@ -1,6 +1,7 @@
 <template>
-  <div class="card card-body mt-4">
+  <div class="card card-body mt-4 admin-form">
     <!-- using @submit as a click function - add prevent to stop from refreshing page -->
+    <h2>Create New Testimonial</h2>
     <form @submit.prevent="onSubmit">    
       <div class="form-group">
         <label>name</label>
@@ -55,8 +56,8 @@
 
       
 
-      <button type="submit" class="btn btn-success mt-3">
-        Create Project
+      <button type="submit" class="button btn-success mt-3">
+        Add Testimonial
       </button>
     </form>
   </div>

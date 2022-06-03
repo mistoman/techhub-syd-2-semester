@@ -83,6 +83,10 @@ export default {
 .nav-logo {
   
   width: 100%;
+
+  &.inverted {
+    filter: brightness(0) invert(1);
+  }
 }
 .nav {
     display: flex;
@@ -90,9 +94,7 @@ export default {
     max-width: 1900px;
     margin: 0 auto;
     
-    
-    
-    
+        
 }
 
 

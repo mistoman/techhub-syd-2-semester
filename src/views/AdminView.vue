@@ -1,16 +1,17 @@
 <template>
   <div class="about"> 
     <h1>This is an admin page</h1>
-    <h1>Welcome {{ name }}</h1>
-    <button  @click="logout">  <!-- v-if="user"  -->
+    <h2 class="sub-header">Welcome {{ name }}</h2>
+    <button class="button danger"  @click="logout">  <!-- v-if="user"  -->
       Logout
     </button>
 
     <ProjectCreate />
     <ProjectCreateTestimonials />
     <ProjectList />
+    <TestimonialsList />
 
-    <ProjectListTestimonials />
+    
 
   </div>
 </template>
@@ -25,7 +26,8 @@ import { /*useRoute,*/ useRouter } from 'vue-router'
 import ProjectCreate from '@/components/ProjectCreate.vue'
 import ProjectList from '@/components/ProjectList.vue'
 import ProjectCreateTestimonials from '@/components/ProjectCreateTestimonials.vue'
-import ProjectListTestimonials from '@/components/ProjectListTestimonials.vue'
+import TestimonialsList from '@/components/TestimonialsList.vue'
+
 
 export default {
   name: 'HomeSecView',
@@ -34,8 +36,8 @@ export default {
     ProjectCreate,
     ProjectCreateTestimonials,
     ProjectList,
-    ProjectListTestimonials
-
+    TestimonialsList
+   
 
   },
   setup() {
@@ -71,3 +73,5 @@ export default {
   }
 }
 </script>
+
+

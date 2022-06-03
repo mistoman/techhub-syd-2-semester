@@ -2,110 +2,72 @@
 
   <div class="card admin-form">
     <!-- using @submit as a click function - add prevent to stop from refreshing page -->
-    <h2>Edit Event</h2>
+    <h2>Edit Testimonial</h2>
     <form @submit.prevent="update">    
       <div class="form-group">
-        <label>Title</label>
+        <label>Name</label>
         <input 
           type="text" 
-          v-model="form.title" 
+          v-model="form.name" 
           class="form-control" 
           required 
         />
       </div>
 
       <div class="form-group">
-        <label>IMG Link for picture</label>
+        <label>Job Title</label>
         <input id="imagename"
           type="text"
           class="form-control"
-          v-model="form.imgagefordb"
+          v-model="form.jobtitle"
           required
         />
       </div>
 
       <div class="form-group">
-        <label>Description</label>
+        <label>Company</label>
         <input 
           type="text"
           class="form-control"
-          v-model="form.description"
+          v-model="form.company"
           required
         />
       </div>
 
       <div class="form-group">
-        <label>Date</label>
+        <label>Quote</label>
         <input 
           type="text"
           class="form-control"
-          v-model="form.date"
+          v-model="form.quote"
           required
         />
       </div>
 
       <div class="form-group">
-        <label>Location of Event</label>
+        <label>Website</label>
         <input 
           type="text"
           class="form-control"
-          v-model="form.location"
+          v-model="form.website"
           required
         />
       </div>
       
-
-      <div class="form-group">
-        <label for="image">Image</label>
-
-        <input id="image" ref="file"
-
-        v-on:change="handleFileUpload()"  
-        type="file">
-        <p class="info-text-upload">You can upload images to the firebase storage bucket, but it will not load Dynamically  you need to put the link in the &nbsp;<span>"IMG Link for picture"</span>&nbsp;input field to work </p>
-      </div>
-
-
-
       
       <br>
       <button type="submit" class="button btn-success">
-        Edit Event
+        Edit Testimonial
       </button>
     </form>
   </div>
 
-
-  <!-- <div class="card card-body mt-4">
-    <h3>Edit users</h3>
-    <form @submit.prevent="update">
-
-      <div class="form-group">
-        <label>Name</label>
-        <input v-model="form.name" class="form-control" required />
-      </div>
-
-      <div class="form-group mt-3">
-        <label>Task</label>
-        <input
-          v-model="form.task"
-          class="form-control"
-          type="text"
-          required
-        />
-      </div>
-
-      <button type="submit" class="btn btn-primary  mt-3">
-        Update
-      </button>
-    </form>
-  </div> -->
 </template>
 
 <script>
 import { reactive, computed, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { getEvent, updateEvent } from '@/firebase.js'
+import { getProject, updateProject } from '@/firebase.js'
 
 export default {
   setup() {
@@ -119,34 +81,34 @@ export default {
     const projectId = computed(() => route.params.id)
 
     const form = reactive({
-      title: '', 
-      imgagefordb: '', 
-      description: '', 
-      date: '',
-      location: ''
+      name: '', 
+      jobtitle: '', 
+      company: '', 
+      quote: '',
+      website: ''
     })
     // show information about the current(click) project in the edit form
     // add an onMounted life-hook that will get the user, based on router id 
     // pull the project from firebase and then assign the values to the fields
     onMounted(async () => {
-      const project = await getEvent(projectId.value)
-      form.title = project.title
-      form.imgagefordb = project.imgagefordb
-      form.description = project.description
-      form.date = project.date
-      form.location = project.location
+      const project = await getProject(projectId.value)
+      form.name = project.name
+      form.jobtitle = project.jobtitle
+      form.company = project.company
+      form.quote = project.quote
+      form.website = project.website
     })
 
     const update = async () => {
       // once user clicks submit, redirect them to home page or '/'
-      await updateEvent(projectId.value, {...form})
+      await updateProject(projectId.value, {...form})
       router.push('/admin')
       // after create - empty input field
-      form.title = '',
-      form.imgagefordb = '',
-      form.description = '',
-      form.date = '',
-      form.location = ''
+      form.name = '',
+      form.jobtitle = '',
+      form.company = '',
+      form.quote = '',
+      form.website = ''
     }
 
     return { form, update }

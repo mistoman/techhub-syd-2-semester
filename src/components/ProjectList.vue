@@ -9,6 +9,7 @@
         </tr>
       </thead>
       <tbody>
+        
         <tr v-for="{ id, title, imagePath, description, date, location } in events" :key="id">
           <td>{{ title }}</td>
           <td> <img v-bind:src="imagePath" alt="" /></td>

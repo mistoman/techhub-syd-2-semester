@@ -1,6 +1,7 @@
 <template>
   <div class="events-container">
         <div class="event-item" v-for="{ id, title, imgagefordb, description, date, location } in events" :key="id">
+         
           <img v-bind:src="imgagefordb" alt="" />
           <div class="event-item-info">
             <p>{{ date }}</p>
@@ -64,13 +65,7 @@ import { useLoadEvents } from '@/firebase.js'
 
   }
 
-  .active-members {
 
-    .active-members-top {
-      display: flex;
-      flex-direction: column;
-    }
-  }
 }
 
 </style>

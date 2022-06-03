@@ -685,7 +685,21 @@
     background: none;
     color: black;
 
+
   }
+
+    .button.danger {
+
+    border: 5px solid #812222;
+    background: #c31c1c;
+    color: white;
+
+    margin: 0 auto;
+
+    padding: 10px 30px;
+
+  }
+
 
 
 

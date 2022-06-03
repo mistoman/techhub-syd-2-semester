@@ -99,7 +99,7 @@ export const updateProject = (id, project) => {
   return projectCollection.doc(id).update(project)
 }
 
-export const updateevent = (id, event) => {
+export const updateEvent = (id, event) => {
   return eventCollection.doc(id).update(event)
 }
 

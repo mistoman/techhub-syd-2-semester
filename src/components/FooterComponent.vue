@@ -2,9 +2,7 @@
     <footer class="footer">
         <div class="footer-info-grid">
 
-            <a href="/">
-                <img class="nav-logo" src="fulllogopurple.ths.svg" alt="">
-            </a>
+            <router-link to="/"><img class="nav-logo inverted" src="fulllogopurple.ths.svg" alt=""></router-link>
             <div class="footer-info-grid-sec">
                 <p class="underline-text">Company</p>
                 <p>About Us</p>

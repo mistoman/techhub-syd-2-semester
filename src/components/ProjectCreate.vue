@@ -1,6 +1,7 @@
 <template>
-  <div class="card">
+  <div class="card admin-form">
     <!-- using @submit as a click function - add prevent to stop from refreshing page -->
+    <h2>Create New Event</h2>
     <form @submit.prevent="onSubmit">    
       <div class="form-group">
         <label>Title</label>
@@ -51,17 +52,23 @@
           required
         />
       </div>
-      <p class="info-text-upload">You can upload images to the firebase storage bucket, but it will not load Dynamically  you need to put the link in the &nbsp;<span>"IMG Link for picture"</span>&nbsp;input field to work </p>
+      
 
       <div class="form-group">
+        <label for="image">Image</label>
+
         <input id="image" ref="file"
+
         v-on:change="handleFileUpload()"  
         type="file">
+        <p class="info-text-upload">You can upload images to the firebase storage bucket, but it will not load Dynamically  you need to put the link in the &nbsp;<span>"IMG Link for picture"</span>&nbsp;input field to work </p>
       </div>
+
+
 
       
       <br>
-      <button type="submit" class="btn btn-success">
+      <button type="submit" class="button btn-success">
         Add Event
       </button>
     </form>
@@ -163,17 +170,77 @@ import {storageRefefrence} from '@/firebase.js' // all from firebase.js file
 
 <style lang="scss">
 
+.card.admin-form {
+
+  box-shadow: 0 0 10px gainsboro;
+  margin: 0 auto;
+  padding: 50px;
+  max-width: 300px;
+  margin-top: 25px;
+
+
+    .button {
+      width: 100%;
+    }
+
+
+
+  .form-group {
+
+
+
+    input {
+      border: 1px solid gainsboro;
+
+      padding: 10px;
+      width: 100%;
+      appearance: none;
+      box-sizing: border-box;
+    }
+
+    p {
+      font-size: 12px;
+      text-align: left;
+      margin-top: 0;
+    }
+    label {
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: left;
+    width: 100%;
+    
+    }
+
+  }
+
+
+
+}
+
+.sub-header {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
 .card {
   display: flex;
   justify-content: center;
   align-content: center;
+  flex-direction: column;
+
+  text-align: center;
+  margin-top: 50px;
+
+  h2 {
+    text-align: center;
+    font-size: 24px;
+    line-height: 28px;
+    margin-bottom: 25px;
+  }
 
   .info-text-upload {
-      text-align: center;
-      display: flex;
-      justify-content: center;
-      align-content: center;
-      font-size: 20px;
       width: 100%;
 
       span {
@@ -191,21 +258,12 @@ import {storageRefefrence} from '@/firebase.js' // all from firebase.js file
       font-size: 23px;
     }
 
-
-
     input {
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
-
-
-    
   }
 
-  .btn {
-    margin-top: 20px;
-    margin-bottom: 50px;
-  }
 }
 
 </style>

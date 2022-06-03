@@ -13,12 +13,14 @@ import Edit from '../views/EditView.vue'
 // For login stuff
 import Login from '../views/LoginView.vue'
 import Register from '../views/RegisterView.vue'
+import EditTestimonials from '../views/EditTestimonialsView.vue'
 
 const routes = [
   {
     path: '/',
     name: 'HomeView',
-    component: Home
+    component: Home,
+    meta: { title: 'Techhub' }
   },
   {
     path: '/ContactView',
@@ -44,6 +46,11 @@ const routes = [
     path: '/edit/:id',  // id parameter to know which project we clicked
     name: 'EditView',
     component: Edit
+  },
+  {
+    path: '/edittestimonials/:id',  // id parameter to know which project we clicked
+    name: 'EditTestimonials',
+    component: EditTestimonials
   },
   {
     path: '/event/:id',  // id parameter to know which project we clicked
@@ -78,6 +85,15 @@ const router = createRouter({
        return { el: to.hash }
     }
 }
+
   
 })
-export default router
+
+import { nextTick } from 'vue'
+
+router.afterEach((to) => {
+  nextTick( () => {
+    document.title = to.meta.title ? to.meta.title : 'TechHub Syd';
+  });
+})
+export default router 
